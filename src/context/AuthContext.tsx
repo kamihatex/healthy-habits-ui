@@ -27,6 +27,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     const data = await authService.login(email, password);
     localStorage.setItem("token", data.token);
     setIsAuthenticated(true);
+    return data;
   };
 
   const logout = () => {
