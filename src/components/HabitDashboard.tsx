@@ -5,6 +5,7 @@ import {
   type Habit,
 } from "../services/habitApi";
 import { useAppSelector } from "../store";
+import { CustomKanban } from "./Kanban";
 
 const HabitsDashboard: React.FC = () => {
   const [habits, setHabits] = useState<Habit[]>([]);
@@ -12,7 +13,7 @@ const HabitsDashboard: React.FC = () => {
   const [error, setError] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingHabit, setEditingHabit] = useState<Habit | null>(null);
-  const { user } = useAppSelector((state) => state.userInfo);
+  // const { user } = useAppSelector((state) => state.userInfo);
   // Form state
   const [formData, setFormData] = useState<CreateHabitData>({
     name: "",
@@ -208,6 +209,7 @@ const HabitsDashboard: React.FC = () => {
           ))}
         </div>
       )}
+      {/*   <CustomKanban /> */}
 
       {/* Modal */}
       {isModalOpen && (
